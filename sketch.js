@@ -20,11 +20,10 @@ let img;
  
  function setup() {
 	
-  createCanvas(640, 480);
+  createCanvas(500, 700);
   
   video = createCapture(VIDEO);
   video.hide();
- // video.size(width, height);
 
   poseNet = ml5.poseNet(video, modelReady);
   poseNet.on('pose', gotPoses);
@@ -64,12 +63,12 @@ function modelReady() {
   
 
 function draw() {
-	image(video, 0, 0,width, height);
+	image(video, 0, 0);
 
    d = dist(noseX, noseY, eyelX, eyelY);
   
   //this is not working
-  image(img,noseX-25,noseY-25,d,d);
+  image(img,noseX-25,noseY-20,d,50);
    
   
   
